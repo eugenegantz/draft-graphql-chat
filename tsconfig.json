@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"esModuleInterop": true,
+		"module": "esnext",
+		"outDir": "./dist",
+		"sourceMap": true,
+		"target": "esnext",
+		"moduleResolution": "node",
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			}
+		]
+	}
+}

@@ -1,0 +1,30 @@
+type Query {
+  messages(id: [ID]): [Message]
+  rooms(id: [ID]): [Room]
+}
+
+type Message {
+  id: ID
+  content: String
+  datetime: String
+  room: Room!
+  user: User!
+}
+
+type Room {
+  id: ID
+  name: String
+  users: [User]
+  messages: [Message]
+}
+
+type User {
+  id: ID
+  name: String
+  rooms: [Room]
+  messages: [Message]
+}
+
+type Mutation {
+  sendMessage(id: ID, content: String, roomId: ID, userId: ID): Message
+}
