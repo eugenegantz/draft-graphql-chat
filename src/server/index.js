@@ -14,7 +14,14 @@
 
 	app.use(cors());
 
-	app.all('/graphql', createHandler({ schema }));
+	app.all('/graphql', createHandler({
+		schema,
+		context: function() {
+			console.log('context arguments', arguments);
+
+			return { test_values: 100200 }
+		}
+	}));
 
 	app.get('/random', (req, res) => {
 		res.send(200, Math.random() + '');

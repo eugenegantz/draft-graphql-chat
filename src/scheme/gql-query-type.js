@@ -19,6 +19,8 @@ const GQLQueryType = new GraphQLObjectType({
 				},
 			},
 			resolve(parent, args) {
+				console.log(arguments);
+
 				if (!args.id) {
 					return _database.messages;
 				}
